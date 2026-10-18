@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe Dwelling Journal | Emergency Home Safety & Plumbing Preparedness Portal</title>
+    <meta name="description" content="A modern Web 2.0 safety publication delivering actionable protocols for pipe bursts, indoor flooding mitigation, freeze protection, and structural risk management.">
+    
+    <!-- Custom SVG Favicon (Crimson Shield & Water Drop Icon) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='28' fill='%231B2028'/><path d='M50 15 L80 30 V55 C80 72 50 88 50 88 C50 88 20 72 20 55 V30 Z' fill='%23C83737'/><path d='M50 35 C50 35 36 50 36 60 C36 67 42 72 50 72 C58 72 64 67 64 60 C64 50 50 35 50 35 Z' fill='%2338A169'/></svg>" type="image/svg+xml">
+
+    <!-- Google Fonts: Unbounded, Plus Jakarta Sans, and Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Unbounded:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* ==========================================================================
+           UNIQUE VISUAL PALETTE: Matte Charcoal Navy, Emergency Crimson, Jade Mint, Cream Ochre
+           Design System: Neomorphic Editorial Portal with Asymmetric Split Diagonal Grids
+           ========================================================================== */
+        :root {
+            --bg-base: #F5F6F8;
+            --bg-surface: #FFFFFF;
+            --bg-dark: #12161F;
+            --bg-dark-card: #1B2028;
+            --text-main: #1D232E;
+            --text-muted: #5C6575;
+            --text-light: #F5F6F8;
+            --accent-crimson: #C83737;     /* Emergency Action Crimson */
+            --accent-crimson-hover: #A82B2B;
+            --accent-jade: #2D8A5E;        /* Safety & Recovery Jade */
+            --accent-ochre: #E0A038;       /* Highlight Amber Ochre */
+            --border-soft: rgba(29, 35, 46, 0.08);
+            --border-crimson: rgba(200, 55, 55, 0.25);
+            --shadow-flat: 8px 8px 0px rgba(18, 22, 31, 0.06);
+            --shadow-elevated: 16px 16px 0px rgba(200, 55, 55, 0.12);
+            --radius-sharp: 6px;
+            --radius-rounded: 22px;
+            --transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Base Reset */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            line-height: 1.75;
+            overflow-x: hidden;
+            background-image: radial-gradient(rgba(200, 55, 55, 0.035) 1.5px, transparent 1.5px);
+            background-size: 32px 32px;
+        }
+
+        h1, h2, h3, .font-heading {
+            font-family: 'Unbounded', sans-serif;
+            letter-spacing: -0.03em;
+            line-height: 1.15;
+        }
+
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        a {
+            color: var(--accent-crimson);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--accent-crimson-hover);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Container & Utilities */
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-padding {
+            padding: 6.5rem 0;
+        }
+
+        /* Asymmetric Layout Structures */
+        .asym-hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 3.5rem;
+            align-items: center;
+        }
+
+        .asym-split-2 {
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            gap: 3.5rem;
+            align-items: center;
+        }
+
+        /* Section Headings */
+        .section-header {
+            margin-bottom: 3.5rem;
+            text-align: center;
+        }
+
+        .section-header.text-left {
+            text-align: left;
+        }
+
+        .badge-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1.1rem;
+            background: rgba(200, 55, 55, 0.08);
+            color: var(--accent-crimson);
+            border: 1px solid var(--border-crimson);
+            border-radius: 50px;
+            font-family: 'Unbounded', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 1.1rem;
+        }
+
+        .section-title {
+            font-size: 2.6rem;
+            color: var(--bg-dark);
+            line-height: 1.2;
+        }
+
+        .section-title span {
+            color: var(--accent-crimson);
+            font-style: italic;
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+        }
+
+        /* Neomorphic Editorial Cards */
+        .portal-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-soft);
+            border-radius: var(--radius-rounded);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-flat);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .portal-card:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: var(--shadow-elevated);
+            border-color: var(--border-crimson);
+        }
+
+        /* Action Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1rem 2.2rem;
+            font-family: 'Unbounded', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+
+        .btn-crimson {
+            background: var(--accent-crimson);
+            color: #FFFFFF;
+            box-shadow: 0 8px 24px rgba(200, 55, 55, 0.28);
+        }
+
+        .btn-crimson:hover {
+            background: var(--accent-crimson-hover);
+            color: #FFFFFF;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(200, 55, 55, 0.38);
+        }
+
+        .btn-dark {
+            background: var(--bg-dark);
+            color: var(--text-light);
+        }
+
+        .btn-dark:hover {
+            background: #232A36;
+            color: #FFFFFF;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--bg-dark);
+            border: 2px solid var(--bg-dark);
+        }
+
+        .btn-outline:hover {
+            background: var(--bg-dark);
+            color: var(--text-light);
+        }
+
+        /* ==========================================================================
+           SECTION 1: Sticky Navigation Bar
+           ========================================================================== */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(245, 246, 248, 0.92);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-soft);
+            padding: 1.1rem 0;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            text-decoration: none;
+        }
+
+        .logo-emblem {
+            width: 44px;
+            height: 44px;
+            background: var(--bg-dark);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-crimson);
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 800;
+            font-size: 1.4rem;
+            box-shadow: 0 4px 14px rgba(18, 22, 31, 0.2);
+        }
+
+        .brand-title {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--bg-dark);
+            line-height: 1.1;
+        }
+
+        .brand-title span {
+            display: block;
+            font-family: 'Playfair Display', serif;
+            font-size: 0.95rem;
+            color: var(--accent-crimson);
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-crimson);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.6rem;
+            color: var(--bg-dark);
+            cursor: pointer;
+        }
+
+        /* ==========================================================================
+           SECTION 2: Dynamic Hero Section
+           ========================================================================== */
+        .hero-section {
+            padding: 5rem 0 6.5rem 0;
+            position: relative;
+        }
+
+        .hero-headline {
+            font-size: 3.2rem;
+            line-height: 1.12;
+            color: var(--bg-dark);
+            margin-bottom: 1.4rem;
+        }
+
+        .hero-subhead {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            max-width: 92%;
+            line-height: 1.75;
+        }
+
+        .hero-frame {
+            position: relative;
+        }
+
+        .hero-img-main {
+            border-radius: var(--radius-rounded);
+            box-shadow: var(--shadow-elevated);
+            width: 100%;
+            height: 490px;
+            object-fit: cover;
+            border: 6px solid var(--bg-surface);
+        }
+
+        .hero-alert-badge {
+            position: absolute;
+            bottom: -25px;
+            left: -25px;
+            background: var(--bg-dark);
+            color: var(--text-light);
+            padding: 1.25rem 1.75rem;
+            border-radius: var(--radius-rounded);
+            box-shadow: var(--shadow-elevated);
+            border-left: 4px solid var(--accent-crimson);
+            max-width: 290px;
+        }
+
+        .hero-alert-badge h4 {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 0.9rem;
+            color: var(--accent-ochre);
+        }
+
+        .hero-alert-badge p {
+            font-size: 0.82rem;
+            color: rgba(245, 246, 248, 0.75);
+            margin-top: 0.2rem;
+        }
+
+        /* ==========================================================================
+           SECTION 3: Quick Stats & Achievements Grid
+           ========================================================================== */
+        .stats-banner {
+            background: var(--bg-dark);
+            color: var(--text-light);
+            padding: 4.5rem 0;
+            border-radius: var(--radius-rounded);
+            margin-bottom: 2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-card {
+            padding: 1rem;
+            border-right: 1px solid rgba(245, 246, 248, 0.12);
+        }
+
+        .stat-card:last-child {
+            border-right: none;
+        }
+
+        .stat-number {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent-crimson);
+            margin-bottom: 0.2rem;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: rgba(245, 246, 248, 0.75);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        /* ==========================================================================
+           SECTION 4: Platform Overview / Editorial Mission Section
+           ========================================================================== */
+        .mission-panel {
+            background: var(--bg-surface);
+            border-radius: var(--radius-rounded);
+            padding: 4rem;
+            border: 1px solid var(--border-soft);
+            box-shadow: var(--shadow-flat);
+        }
+
+        /* ==========================================================================
+           SECTION 5: Main Featured Article Section (SEO / Anchor Placement)
+           ========================================================================== */
+        .article-container {
+            background: var(--bg-surface);
+            border-radius: var(--radius-rounded);
+            padding: 4.5rem;
+            box-shadow: var(--shadow-flat);
+            border: 1px solid var(--border-soft);
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            border-bottom: 1px solid var(--border-soft);
+            padding-bottom: 1.5rem;
+            margin-bottom: 2.2rem;
+        }
+
+        .article-body h2 {
+            font-size: 1.9rem;
+            color: var(--bg-dark);
+            margin: 2.5rem 0 1.2rem 0;
+        }
+
+        .article-body h3 {
+            font-size: 1.4rem;
+            color: var(--accent-crimson);
+            margin: 2rem 0 1rem 0;
+        }
+
+        .article-body p {
+            margin-bottom: 1.6rem;
+            font-size: 1.1rem;
+            color: #2D3542;
+            line-height: 1.85;
+        }
+
+        .article-body ul {
+            margin: 1.2rem 0 1.8rem 2rem;
+            font-size: 1.08rem;
+            color: #2D3542;
+        }
+
+        .article-body li {
+            margin-bottom: 0.75rem;
+        }
+
+        .backlink-anchor {
+            color: var(--accent-crimson);
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-color: var(--accent-ochre);
+            text-underline-offset: 4px;
+            transition: var(--transition);
+        }
+
+        .backlink-anchor:hover {
+            color: var(--accent-crimson-hover);
+            background: rgba(200, 55, 55, 0.1);
+            border-radius: 4px;
+        }
+
+        .article-quote {
+            background: rgba(200, 55, 55, 0.05);
+            border-left: 4px solid var(--accent-crimson);
+            padding: 1.8rem 2.2rem;
+            margin: 2.2rem 0;
+            border-radius: 0 var(--radius-sharp) var(--radius-sharp) 0;
+            font-style: italic;
+            font-size: 1.15rem;
+            color: var(--bg-dark);
+        }
+
+        /* ==========================================================================
+           SECTION 6: Core Features & Key Value Grid
+           ========================================================================== */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .feature-icon-box {
+            width: 58px;
+            height: 58px;
+            background: rgba(200, 55, 55, 0.1);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-crimson);
+            font-size: 1.6rem;
+            margin-bottom: 1.4rem;
+        }
+
+        /* ==========================================================================
+           SECTION 7: Visual Breakdown / Step-by-Step Architecture Guide
+           ========================================================================== */
+        .step-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .step-card {
+            display: flex;
+            gap: 1.75rem;
+            background: var(--bg-surface);
+            padding: 2rem;
+            border-radius: var(--radius-rounded);
+            border: 1px solid var(--border-soft);
+        }
+
+        .step-index {
+            width: 48px;
+            height: 48px;
+            background: var(--bg-dark);
+            color: var(--accent-ochre);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        /* ==========================================================================
+           SECTION 8: Comprehensive Comparison Table / Value Matrix
+           ========================================================================== */
+        .table-responsive {
+            overflow-x: auto;
+            border-radius: var(--radius-rounded);
+            border: 1px solid var(--border-soft);
+            box-shadow: var(--shadow-flat);
+        }
+
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-surface);
+            text-align: left;
+        }
+
+        .matrix-table th {
+            background: var(--bg-dark);
+            color: var(--text-light);
+            padding: 1.3rem 1.6rem;
+            font-family: 'Unbounded', sans-serif;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .matrix-table td {
+            padding: 1.2rem 1.6rem;
+            border-bottom: 1px solid var(--border-soft);
+            font-size: 0.98rem;
+        }
+
+        .matrix-table tr:hover {
+            background: rgba(200, 55, 55, 0.02);
+        }
+
+        /* ==========================================================================
+           SECTION 9: Interactive FAQ Section (Accordion)
+           ========================================================================== */
+        .faq-accordion {
+            max-width: 920px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.1rem;
+        }
+
+        .faq-item {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-soft);
+            border-radius: var(--radius-sharp);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .faq-question {
+            padding: 1.4rem 2rem;
+            font-family: 'Unbounded', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--bg-dark);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: none;
+            border: none;
+            width: 100%;
+            text-align: left;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease-out;
+            padding: 0 2rem;
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 280px;
+            padding: 0 2rem 1.6rem 2rem;
+        }
+
+        .faq-icon {
+            font-size: 1.3rem;
+            color: var(--accent-crimson);
+            transition: var(--transition);
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        /* ==========================================================================
+           SECTION 10: Expert Tips & Best Practices Cards
+           ========================================================================== */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .tip-card {
+            border-top: 4px solid var(--accent-crimson);
+        }
+
+        /* ==========================================================================
+           SECTION 11: User Feedback & Testimonials Showcase
+           ========================================================================== */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+        }
+
+        .author-box {
+            display: flex;
+            align-items: center;
+            gap: 1.1rem;
+            margin-top: 1.6rem;
+        }
+
+        .author-avatar {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* ==========================================================================
+           SECTION 12: Highlighted Resource Banner / Quick Action Callout
+           ========================================================================== */
+        .resource-banner {
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #232A36 100%);
+            border-radius: var(--radius-rounded);
+            padding: 4.5rem 3.5rem;
+            color: #FFFFFF;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--border-crimson);
+        }
+
+        /* ==========================================================================
+           SECTION 13: Functional Contact Form Section
+           ========================================================================== */
+        .contact-card {
+            background: var(--bg-surface);
+            border-radius: var(--radius-rounded);
+            padding: 4rem;
+            border: 1px solid var(--border-soft);
+            box-shadow: var(--shadow-flat);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.55rem;
+        }
+
+        .form-group.full {
+            grid-column: span 2;
+        }
+
+        .form-group label {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--bg-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .form-control {
+            padding: 0.95rem 1.25rem;
+            border: 1px solid var(--border-soft);
+            border-radius: var(--radius-sharp);
+            background: var(--bg-base);
+            font-family: inherit;
+            font-size: 0.98rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-crimson);
+            background: #FFFFFF;
+        }
+
+        /* ==========================================================================
+           SECTION 14: Comprehensive Footer
+           ========================================================================== */
+        .site-footer {
+            background: var(--bg-dark);
+            color: rgba(245, 246, 248, 0.75);
+            padding: 5.5rem 0 2.5rem 0;
+            font-size: 0.92rem;
+            border-top: 4px solid var(--accent-crimson);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 3.5rem;
+            margin-bottom: 4.5rem;
+        }
+
+        .footer-title {
+            color: var(--accent-ochre);
+            font-family: 'Unbounded', sans-serif;
+            font-size: 0.95rem;
+            margin-bottom: 1.4rem;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .footer-links a {
+            color: rgba(245, 246, 248, 0.75);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-ochre);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(245, 246, 248, 0.1);
+            padding-top: 2.2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.88rem;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 1024px) {
+            .asym-hero-grid, .asym-split-2 {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .features-grid, .tips-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .hero-headline {
+                font-size: 2.6rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .features-grid, .tips-grid, .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-card {
+                border-right: none;
+                border-bottom: 1px solid rgba(245, 246, 248, 0.12);
+            }
+
+            .article-container, .contact-card {
+                padding: 2.2rem 1.6rem;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full {
+                grid-column: span 1;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1.2rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==========================================================================
+       SECTION 1: Sticky Navigation Bar
+       ========================================================================== -->
+    <nav class="navbar">
+        <div class="container nav-wrapper">
+            <a href="#" class="brand-logo">
+                <div class="logo-emblem">S</div>
+                <div class="brand-title">Safe Dwelling <span>Journal</span></div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#mission">Overview</a></li>
+                <li><a href="#featured-article">Burst Protocol</a></li>
+                <li><a href="#guide">Action Plan</a></li>
+                <li><a href="#matrix">Risk Matrix</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Consult Desk</a></li>
+            </ul>
+            <a href="#featured-article" class="btn btn-crimson" style="padding: 0.65rem 1.4rem; font-size: 0.8rem;">Read Article</a>
+            <button class="mobile-toggle" aria-label="Toggle Navigation Menu">☰</button>
+        </div>
+    </nav>
+
+    <!-- ==========================================================================
+       SECTION 2: Dynamic Hero Section
+       ========================================================================== -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="asym-hero-grid">
+                <div>
+                    <div class="badge-tag">
+                        <span>🚨</span> Emergency Water Damage & Freeze Response
+                    </div>
+                    <h1 class="hero-headline">Immediate Action Protocols for Critical Indoor Pipe Bursts</h1>
+                    <p class="hero-subhead">A specialized digital publication providing property owners with emergency mitigation frameworks, main valve isolation steps, and structural water damage containment strategies.</p>
+                    <div style="display: flex; gap: 1.2rem; flex-wrap: wrap;">
+                        <a href="#featured-article" class="btn btn-crimson">Explore Emergency Article →</a>
+                        <a href="#guide" class="btn btn-outline">Emergency Checklist</a>
+                    </div>
+                </div>
+                <div class="hero-frame">
+                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0A?auto=format&fit=crop&w=1000&q=80" alt="Plumbing Inspection and Pipe Maintenance" class="hero-img-main">
+                    <div class="hero-alert-badge">
+                        <h4>Sub-Zero Pressure Warning</h4>
+                        <p>Shutting main shutoff valve within 5 minutes prevents 90% of structural water loss.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       SECTION 3: Quick Stats & Achievements Grid
+       ========================================================================== -->
+    <div class="container">
+        <section class="stats-banner">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">5 Min</div>
+                    <div class="stat-label">Critical Window for Valve Isolation</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2,000+</div>
+                    <div class="stat-label">PSI Hydrostatic Ice Burst Pressure</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Independent Safety Editorial Focus</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Disaster Preparedness Protocol</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ==========================================================================
+       SECTION 4: Platform Overview / Editorial Mission Section
+       ========================================================================== -->
+    <section class="section-padding" id="mission">
+        <div class="container">
+            <div class="mission-panel">
+                <div class="badge-tag">Editorial Mission</div>
+                <h2 class="section-title" style="margin-bottom: 1.5rem;">Empowering Property Owners in High-Risk Climate Zones</h2>
+                <p style="font-size: 1.15rem; color: var(--text-muted); max-width: 920px; margin-bottom: 1.5rem;">
+                    Safe Dwelling Journal serves as an independent digital portal for homeowners, property stewards, and facility directors. We publish actionable, research-backed guidance on mitigating household utility disasters, freeze-thaw plumbing breaches, and indoor flood hazards.
+                </p>
+                <p style="font-size: 1.02rem; color: var(--text-muted); max-width: 920px;">
+                    Our publication collaborates with certified disaster restoration technicians, civil engineers, and master plumbers to establish clear, stress-reducing emergency workflows that save thousands in property loss during sub-freezing weather events.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       SECTION 5: Main Featured Article Section (SEO / Anchor Placement)
+       ========================================================================== -->
+    <section class="section-padding" id="featured-article" style="background: rgba(200, 55, 55, 0.02);">
+        <div class="container">
+            <article class="article-container">
+                <div class="section-header text-left" style="margin-bottom: 1.5rem;">
+                    <div class="badge-tag">Volume 24 • Emergency Protocol</div>
+                    <h1 class="section-title" style="font-size: 2.6rem;">Steps to Take Immediately When an Indoor Pipe Bursts</h1>
+                </div>
+
+                <div class="article-meta">
+                    <span>Written by <strong>Julian Vance</strong>, Disaster Preparedness Analyst</span>
+                    <span>•</span>
+                    <span>Published in Emergency Management</span>
+                    <span>•</span>
+                    <span>9 Min Read</span>
+                </div>
+
+                <div class="article-body">
+                    <p class="article-quote">
+                        "A burst supply line is one of the most stressful emergencies a property owner can experience during severe freeze events. Uncontrolled water flow can cause thousands of dollars in structural damage in just a matter of minutes if left unchecked."
+                    </p>
+
+                    <p>
+                        During peak winter months across Northern and Mid-Atlantic regions, sudden sub-freezing polar vortexes push residential plumbing systems to their absolute mechanical limits. Uninsulated supply lines running through crawlspaces, exterior wall cavities, or unheated basements are particularly vulnerable. When water trapped inside an enclosed copper, galvanized iron, or PEX pipe freezes, it expands by approximately 9% in volume, exerting upwards of 2,000 PSI of hydrostatic pressure against the internal pipe wall.
+                    </p>
+
+                    <p>
+                        Eventually, this immense pressure causes a longitudinal rupture or fitting shear. The true crisis begins during the subsequent thaw or while the line remains pressurized: water rushes out at full municipal supply volume (often 8 to 12 gallons per minute). Recognizing the severity of a pipe breach and reacting within the first five minutes is critical to preserving structural flooring, drywall integrity, and electrical safety.
+                    </p>
+
+                    <h2>The Physics of Structural Saturation and Rapid Mitigation</h2>
+                    <p>
+                        Pressurized water escaping into indoor spaces migrates rapidly through floor joists, ceiling plaster, and wall insulation. Drywall absorbs standing water through capillary action, losing structural strength within 30 to 60 minutes and creating imminent ceiling collapse risks on lower levels. Furthermore, trapped moisture behind baseboards fosters toxic mold spore germination within 24 to 48 hours if thorough structural drying is delayed.
+                    </p>
+                    <p>
+                        According to emergency recovery standards published by the <a href="https://www.fema.gov/" target="_blank" rel="noopener">Federal Emergency Management Agency (FEMA)</a>, immediate main shutoff isolation reduces total property loss and structural restoration expenses by over 80%.
+                    </p>
+
+                    <h3>Immediate Step-by-Step Emergency Response Sequence</h3>
+                    <p>
+                        Knowing the location of your main shutoff valve and turning off electricity to affected zones are crucial first actions. Homeowners should memorize and immediately execute this four-step crisis workflow:
+                    </p>
+                    <ul>
+                        <li><strong>Step 1: Main Water Isolation:</strong> Locate your primary incoming water shutoff valve (typically in the basement near the front foundation wall or water meter) and rotate it fully clockwise or lever it perpendicular to the pipe.</li>
+                        <li><strong>Step 2: Electrical Hazard Mitigation:</strong> Switch off circuit breakers serving flooded rooms at the main electrical panel to prevent shock hazards if water approaches outlets or appliances.</li>
+                        <li><strong>Step 3: Line Residual Pressure Release:</strong> Open the lowest faucets in your home (such as basement laundry sinks or outdoor hose bibs) to drain remaining trapped water safely away from living areas.</li>
+                        <li><strong>Step 4: Standing Water Extraction:</strong> Utilize wet/dry vacuums, squeegees, and heavy towels to remove standing water, elevating valuable furniture and cardboard boxes off saturated carpets.</li>
+                    </ul>
+
+                    <h2>Engaging Professional Emergency Plumbing Technicians</h2>
+                    <p>
+                        While executing immediate containment steps stops active flooding, repairing sheared copper joints, spliced PEX lines, or subterranean supply main cracks requires specialized diagnostic tools and licensed plumbing expertise.
+                    </p>
+
+                    <div style="margin: 2.5rem 0; border-radius: var(--radius-sharp); overflow: hidden;">
+                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80" alt="Emergency Plumber Repairing Damaged Supply Line">
+                        <p style="font-size: 0.85rem; color: var(--text-muted); text-align: center; margin-top: 0.6rem;">Certified emergency plumbers deploy thermal imaging and acoustic leak detectors to locate hidden pipe breaches.</p>
+                    </div>
+
+                    <p>
+                        Visiting <a href="https://premierplumberyork.com/" class="backlink-anchor">premierplumberyork.com</a> offers access to experienced local technicians who can repair damaged piping promptly. Professional dispatch teams utilize thermal cameras, pipe-thawing rigs, and hydro-static testing equipment to ensure water service is fully restored without risking secondary line bursts.
+                    </p>
+
+                    <h2>Understanding Code Compliance and Structural Water Standards</h2>
+                    <p>
+                        Following a major water line breach, proper sanitation and structural drying must comply with established indoor environmental standards. Standing water in crawlspaces or basements can compromise foundational soil compaction or introduce bio-contaminants if left unmonitored.
+                    </p>
+                    <p>
+                        Guidelines established by the <a href="https://www.epa.gov/mold" target="_blank" rel="noopener">U.S. Environmental Protection Agency (EPA)</a> emphasize that aggressive air circulation using industrial dehumidifiers within the first 24 hours remains the single most effective defense against permanent mold contamination.
+                    </p>
+
+                    <h2>Long-Term Prevention and Seasonal Vigilance</h2>
+                    <p>
+                        Staying calm and taking fast action reduces the long-term impact on your living space. To prevent future winter bursts, insulate all exposed pipes with closed-cell foam sleeves, install smart automatic water shutoff valves with moisture sensors, and keep cabinet doors open during severe sub-zero cold snaps.
+                    </p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       SECTION 6: Core Features & Key Value Grid
+       ========================================================================== -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge-tag">Safety Pillars</div>
+                <h2 class="section-title">Emergency Preparedness Framework</h2>
+            </div>
+            <div class="features-grid">
+                <div class="portal-card">
+                    <div class="feature-icon-box">💧</div>
+                    <h3 style="font-size: 1.15rem; margin-bottom: 0.75rem; font-family: 'Unbounded', sans-serif;">Main Valve Isolation</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted);">Locating, testing, and tagging primary home water shutoff valves for rapid quarter-turn isolation during breaches.</p>
+                </div>
+                <div class="portal-card">
+                    <div class="feature-icon-box">⚡</div>
+                    <h3 style="font-size: 1.15rem; margin-bottom: 0.75rem; font-family: 'Unbounded', sans-serif;">Electrical Safety Protocol</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted);">De-energizing flooded electrical zones at the circuit breaker to prevent severe shock and short-circuit hazards.</p>
+                </div>
+                <div class="portal-card">
+                    <div class="feature-icon-box">❄️</div>
+                    <h3 style="font-size: 1.15rem; margin-bottom: 0.75rem; font-family: 'Unbounded', sans-serif;">Thermal Pipe Shielding</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted);">Installing closed-cell tubular foam and electric heat cables along vulnerable uninsulated supply lines.</p>
+                </div>
+                <div class="portal-card">
+                    <div class="feature-icon-box">🛡️</div>
+                    <h3 style="font-size: 1.15rem; margin-bottom: 0.75rem; font-family: 'Unbounded', sans-serif;">Smart Flow Monitoring</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted);">Integrating automatic IoT water shutoff valves that detect continuous abnormal flow and close automatically.</p>
+                </div>
+                <div class="portal-card">
+                    <div class="feature-icon-box">🌀</div>
+                    <h3 style="font-size: 1.15rem; margin-bottom: 0.75rem; font-family: 'Unbounded', sans-serif;">Structural Extraction</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted);">Deploying commercial water vacuums, air movers, and dehumidifiers to arrest subfloor moisture saturation.</p>
+                </div>
+                <div class="portal-card">
+                    <div class="feature-icon-box">📞</div>
+                    <h3 style="font-size: 1.15rem; margin-bottom: 0.75rem; font-family: 'Unbounded', sans-serif;">Emergency Dispatch</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted);">Establishing rapid contact protocols with licensed local emergency technicians for prompt line repairs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       SECTION 7: Visual Breakdown / Step-by-Step Architecture Guide
+       ========================================================================== -->
+    <section class="section-padding" id="guide" style="background: var(--bg-surface);">
+        <div class="container">
+            <div class="asym-split-2">
+                <div>
+                    <div class="badge-tag">Action Blueprint</div>
+                    <h2 class="section-title" style="margin-bottom: 1.25rem;">4-Step Burst Response Blueprint</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem;">Memorize this sequential crisis workflow to minimize structural water damage when a supply pipe ruptures unexpectedly.</p>
+                    <a href="#contact" class="btn btn-crimson">Download Printable Guide</a>
+                </div>
+                <div class="step-list">
+                    <div class="step-card">
+                        <div class="step-index">1</div>
+                        <div>
+                            <h4 style="font-size: 1.1rem; color: var(--bg-dark); font-family: 'Unbounded', sans-serif;">Close Main Shutoff Valve</h4>
+                            <p style="font-size: 0.92rem; color: var(--text-muted);">Turn the master water valve clockwise immediately to halt all incoming pressurized water supply.</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-index">2</div>
+                        <div>
+                            <h4 style="font-size: 1.1rem; color: var(--bg-dark); font-family: 'Unbounded', sans-serif;">Cut Power to Affected Area</h4>
+                            <p style="font-size: 0.92rem; color: var(--text-muted);">Switch off circuit breakers serving flooded floors to eliminate potential electrical hazards.</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-index">3</div>
+                        <div>
+                            <h4 style="font-size: 1.1rem; color: var(--bg-dark); font-family: 'Unbounded', sans-serif;">Drain Low Faucets & Spigots</h4>
+                            <p style="font-size: 0.92rem; color: var(--text-muted);">Open lower level sink taps to release remaining water pressure away from damaged pipe seams.</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-index">4</div>
+                        <div>
+                            <h4 style="font-size: 1.1rem; color: var(--bg-dark); font-family: 'Unbounded', sans-serif;">Call Emergency Technicians</h4>
+                            <p style="font-size: 0.92rem; color: var(--text-muted);">Contact professional emergency repair dispatch for professional line splicing and structural drying.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       SECTION 8: Comprehensive Comparison Table / Value Matrix
+       ========================================================================== -->
+    <section class="section-padding" id="matrix">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge-tag">Risk Assessment Matrix</div>
+                <h2 class="section-title">Pipe Material Freeze Vulnerability Matrix</h2>
+            </div>
+            <div class="table-responsive">
+                <table class="matrix-table">
+                    <thead>
+                        <tr>
+                            <th>Pipe Material</th>
+                            <th>Freeze Rupture Risk</th>
+                            <th>Primary Failure Mode</th>
+                            <th>Immediate Repair Strategy</th>
+                            <th>Long-Term Replacement Recommendation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Rigid Copper (Type M/L)</strong></td>
+                            <td><span style="color:var(--accent-crimson); font-weight:700;">Very High</span></td>
+                            <td>Longitudinal seam split from ice pressure</td>
+                            <td>Soldered copper sleeve or SharkBite fitting</td>
+                            <td>Insulated PEX or heavy-wall Type L copper</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Galvanized Steel</strong></td>
+                            <td>High Priority</td>
+                            <td>Thread shearing & rust joint burst</td>
+                            <td>Threaded union replacement or transition clamp</td>
+                            <td>Full repipe with modern PEX-a tubing</td>
+                        </tr>
+                        <tr>
+                            <td><strong>PEX Flexible Tubing</strong></td>
+                            <td>Moderate / Resilient</td>
+                            <td>Brass fitting slip or expansion crack</td>
+                            <td>Crimp ring replacement & section splice</td>
+                            <td>Maintain proper insulation & expansion loops</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CPVC Plastic Pipe</strong></td>
+                            <td><span style="color:var(--accent-crimson); font-weight:700;">Very High</span></td>
+                            <td>Brittle shattering under sub-zero thermal shock</td>
+                            <td>Solvent-weld coupling section repair</td>
+                            <td>Upgrade to freeze-flexible PEX tubing</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       SECTION 9: Interactive FAQ Section (Accordion)
+       ========================================================================== -->
+    <section class="section-padding" id="faq" style="background: var(--bg-surface);">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge-tag">Frequently Asked Questions</div>
+                <h2 class="section-title">Expert Emergency Answers</h2>
+            </div>
+            <div class="faq-accordion">
+                <div class="faq-item active">
+                    <button class="faq-question">
+                        Where is the main water shutoff valve located in most homes?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        In most homes, the main water shutoff valve is located in the basement or lowest crawlspace along the front exterior wall where the water service line enters from the street. It is typically positioned near the water meter.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Should I try to thaw a frozen pipe using an open-flame torch?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Never use an open-flame torch to thaw frozen pipes. Torches pose severe fire risks to dry wood framing and can cause sudden steam explosions inside sealed pipes. Use an electric heat pad, hairdryer, or warm towels instead.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How quickly can mold start growing after an indoor pipe burst?
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Under warm ambient conditions, toxic mold spores can begin germinating on wet drywall, carpet padding, and wood joists within 24 to 48 hours. Aggressive structural drying within 24 hours is essential.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What is the dripping faucet trick during extreme freeze events?
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Allowing a faucet served by exterior-wall pipes to drip slightly during extreme cold snaps keeps water continuously moving through the line. Moving water mitigates hydrostatic pressure buildup between ice blockages and closed taps.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       SECTION 10: Expert Tips & Best Practices Cards
+       ========================================================================== -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge-tag">Safety Rules</div>
+                <h2 class="section-title">Field Rules for Winter Home Protection</h2>
+            </div>
+            <div class="tips-grid">
+                <div class="portal-card tip-card">
+                    <h3 style="font-size: 1.1rem; font-family: 'Unbounded', sans-serif; margin-bottom: 0.6rem; color: var(--accent-crimson);">Rule #1: Label Your Shutoff</h3>
+                    <p style="font-size: 0.94rem; color: var(--text-muted);">Attach a bright, reflective safety tag to your main water valve so family members can locate it instantly during power outages.</p>
+                </div>
+                <div class="portal-card tip-card">
+                    <h3 style="font-size: 1.1rem; font-family: 'Unbounded', sans-serif; margin-bottom: 0.6rem; color: var(--accent-crimson);">Rule #2: Open Vanity Cabinets</h3>
+                    <p style="font-size: 0.94rem; color: var(--text-muted);">During sub-zero freeze snaps, keep sink cabinet doors open so ambient room heat reaches hidden wall plumbing.</p>
+                </div>
+                <div class="portal-card tip-card">
+                    <h3 style="font-size: 1.1rem; font-family: 'Unbounded', sans-serif; margin-bottom: 0.6rem; color: var(--accent-crimson);">Rule #3: Disconnect Hoses</h3>
+                    <p style="font-size: 0.94rem; color: var(--text-muted);">Always disconnect outdoor garden hoses before winter. Trapped water in connected hoses freezes and bursts interior spigot valves.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       SECTION 11: User Feedback & Testimonials Showcase
+       ========================================================================== -->
+    <section class="section-padding" style="background: var(--bg-surface);">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge-tag">Community Feedback</div>
+                <h2 class="section-title">Perspectives From Prepared Property Owners</h2>
+            </div>
+            <div class="testimonial-grid">
+                <div class="portal-card">
+                    <p style="font-style: italic; color: var(--text-muted); font-size: 1.05rem;">
+                        "When an uninsulated laundry line burst during a zero-degree cold snap, knowing exactly where our main shutoff valve was located saved our finished basement from total destruction. The guidance on Safe Dwelling Journal is invaluable!"
+                    </p>
+                    <div class="author-box">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80" alt="Sarah Jenkins" class="author-avatar">
+                        <div>
+                            <h4 style="font-size: 0.95rem; color: var(--bg-dark); font-family: 'Unbounded', sans-serif;">Sarah Jenkins</h4>
+                            <p style="font-size: 0.8rem; color: var(--text-muted);">Homeowner, Sub-Zero Climate Zone</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portal-card">
+                    <p style="font-style: italic; color: var(--text-muted); font-size: 1.05rem;">
+                        "The step-by-step breakdown of electrical isolation and emergency extraction gave me complete confidence when managing a sudden line break. Highly recommended editorial resource for every home steward."
+                    </p>
+                    <div class="author-box">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80" alt="David Sterling" class="author-avatar">
+                        <div>
+                            <h4 style="font-size: 0.95rem; color: var(--bg-dark); font-family: 'Unbounded', sans-serif;">David Sterling</h4>
+                            <p style="font-size: 0.8rem; color: var(--text-muted);">Property Manager, Residential Complex</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       SECTION 12: Highlighted Resource Banner / Quick Action Callout
+       ========================================================================== -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="resource-banner">
+                <div class="asym-split-2">
+                    <div>
+                        <span class="badge-tag" style="background: rgba(224, 160, 56, 0.2); color: var(--accent-ochre);">Free Emergency Printable</span>
+                        <h2 style="font-size: 2.2rem; font-family: 'Unbounded', sans-serif; margin: 0.8rem 0; color: #FFFFFF;">Winter Pipe Burst Emergency Checklist</h2>
+                        <p style="color: rgba(245, 246, 248, 0.82); font-size: 1.05rem;">Download our single-page laminated crisis workflow PDF detailing main valve locations, circuit isolation, and emergency dispatch numbers.</p>
+                    </div>
+                    <div style="text-align: right;">
+                        <a href="#contact" class="btn btn-crimson" style="padding: 1.1rem 2.4rem;">Download PDF Checklist</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       SECTION 13: Functional Contact Form Section
+       ========================================================================== -->
+    <section class="section-padding" id="contact">
+        <div class="container">
+            <div class="asym-split-2">
+                <div>
+                    <div class="badge-tag">Editorial Desk</div>
+                    <h2 class="section-title" style="margin-bottom: 1.25rem;">Consult With Our Safety Specialists</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem;">Have questions regarding home freeze preparation, main valve maintenance, or wish to submit an emergency case study? Reach out to our team.</p>
+                    <div style="display: flex; flex-direction: column; gap: 1rem; color: var(--text-muted); font-size: 0.95rem;">
+                        <p>📍 <strong>Editorial Focus:</strong> Home Safety & Emergency Preparedness</p>
+                        <p>📧 <strong>Safety Desk:</strong> journal@safedwellingjournal.com</p>
+                        <p>⏱️ <strong>Response Window:</strong> 24–48 Business Hours</p>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <form id="contactForm" onsubmit="event.preventDefault(); alert('Thank you for contacting Safe Dwelling Journal. Your inquiry has been submitted.');">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="fname">First Name</label>
+                                <input type="text" id="fname" class="form-control" placeholder="Marcus" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lname">Last Name</label>
+                                <input type="text" id="lname" class="form-control" placeholder="Vance" required>
+                            </div>
+                            <div class="form-group full">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" class="form-control" placeholder="marcus@example.com" required>
+                            </div>
+                            <div class="form-group full">
+                                <label for="propertyType">Property Architecture</label>
+                                <select id="propertyType" class="form-control">
+                                    <option>Single-Family Detached Home</option>
+                                    <option>Historic Rowhome / Townhouse</option>
+                                    <option>Multi-Unit Residential Complex</option>
+                                    <option>Commercial Property</option>
+                                </select>
+                            </div>
+                            <div class="form-group full">
+                                <label for="message">Inquiry / Case Details</label>
+                                <textarea id="message" rows="4" class="form-control" placeholder="Describe your plumbing setup or emergency preparation inquiry..." required></textarea>
+                            </div>
+                            <div class="form-group full">
+                                <button type="submit" class="btn btn-dark" style="width: 100%;">Submit Safety Inquiry</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       SECTION 14: Comprehensive Footer
+       ========================================================================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="#" class="brand-logo" style="margin-bottom: 1.2rem;">
+                        <div class="logo-emblem">S</div>
+                        <div class="brand-title" style="color: #FFFFFF;">Safe Dwelling <span>Journal</span></div>
+                    </a>
+                    <p style="font-size: 0.9rem; line-height: 1.6; max-width: 320px;">
+                        An independent digital Web 2.0 publication devoted to residential disaster preparedness, pipe burst mitigation, and home structural preservation.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="footer-title">Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="#mission">Overview</a></li>
+                        <li><a href="#featured-article">Burst Protocol</a></li>
+                        <li><a href="#guide">Action Blueprint</a></li>
+                        <li><a href="#matrix">Risk Matrix</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Safety Topics</h4>
+                    <ul class="footer-links">
+                        <li><a href="#featured-article">Main Valve Isolation</a></li>
+                        <li><a href="#featured-article">Electrical Safety</a></li>
+                        <li><a href="#featured-article">Pipe Thawing Rules</a></li>
+                        <li><a href="#featured-article">Structural Extraction</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Publication Details</h4>
+                    <p style="font-size: 0.86rem; line-height: 1.6; margin-bottom: 1rem;">
+                        Delivering actionable home safety intelligence across cold-climate residential regions.
+                    </p>
+                    <div style="font-size: 0.82rem; color: var(--accent-ochre);">
+                        ● Subdomain: safedwellingjournal
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>
+                    © 2026 Safe Dwelling Journal. All rights reserved. Residential Safety Portal.
+                </div>
+                <div style="display: flex; gap: 1.6rem;">
+                    <a href="#" style="color: rgba(245, 246, 248, 0.6);">Privacy Policy</a>
+                    <a href="#" style="color: rgba(245, 246, 248, 0.6);">Terms of Service</a>
+                    <a href="#" style="color: rgba(245, 246, 248, 0.6);">Editorial Ethics</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Minimal Vanilla JS for Accordion & Navigation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // FAQ Accordion Interactivity
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const btn = item.querySelector('.faq-question');
+                btn.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    
+                    faqItems.forEach(i => i.classList.remove('active'));
+                    
+                    if (!isActive) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+
+            // Mobile Menu Toggle
+            const mobileToggle = document.querySelector('.mobile-toggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            if (mobileToggle) {
+                mobileToggle.addEventListener('click', () => {
+                    if (navLinks.style.display === 'flex') {
+                        navLinks.style.display = 'none';
+                    } else {
+                        navLinks.style.display = 'flex';
+                        navLinks.style.flexDirection = 'column';
+                        navLinks.style.position = 'absolute';
+                        navLinks.style.top = '100%';
+                        navLinks.style.left = '0';
+                        navLinks.style.width = '100%';
+                        navLinks.style.background = '#F5F6F8';
+                        navLinks.style.padding = '1.5rem';
+                        navLinks.style.borderBottom = '1px solid var(--border-soft)';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
